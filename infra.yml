@@ -1,0 +1,32 @@
+---
+- name: Servers
+  hosts: all
+  become: true
+  become_user: root
+  vars_files:
+    - group_vars/secret.yml
+  roles: []
+  post_tasks:
+    # Packages
+    - name: Update the apt cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+    - name: Paackages we want installed
+      package:
+        name:
+          - vim
+        state: latest
+
+    # Setup User(s)
+    - user:
+        name: hexylena
+        comment: Helena Rasche
+        shell: /bin/bash
+        groups: sudo
+        append: yes
+    - name: Set authorized key taken from file
+      ansible.posix.authorized_key:
+        user: hexylena
+        state: present
+        key: "{{ lookup('file', 'hexylena.pub') }}"

@@ -22,7 +22,7 @@ make
 
 ## Infrastructure
 
-Here is the current plan:
+Here is the current **plan**, none of it is in place yet.
 
 Service                      | Infrastructure Provider | Notes
 ---                          | ---                     | ---

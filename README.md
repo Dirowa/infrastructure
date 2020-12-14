@@ -24,15 +24,11 @@ make
 
 Here is the current **plan**, none of it is in place yet.
 
-Service                      | Infrastructure Provider | Notes
----                          | ---                     | ---
-CoCalc                       | ATGM                    | Planned to support 168 containers, 4GB RAM per container, 1CPU, 10GB storage, so ~700GB RAM
-Galaxy                       | ATGM                    | Planning to suppot 128 users at the same time, 700GB RAM.
-Linux Playground             | ATGM                    | 128 GB RAM
-Storage + FTP                | ICT                     |
-Linux Playground (7kingdoms) | BML                     | reserved for Lectoraat quick and dirty analysis (snakemade, nasty github tools)
-Agoge                        | BML                     | Here students can do what they like, commandline/ for tools that are not conda-able
-Midgard                      | BML                     | Conda
-Asgard                       | BML                     | Conda
-NewGalaxy                    | BML                     | Compute resources to connect to ATGM Galaxy
-NAS                          | BML                     | Connect to ATGM Galaxy, FTP for extern
+Service   | Infrastructure Provider | Notes
+---       | ---                     | ---
+7kingdoms | BML                     | Cocalc test
+OldGalaxy | BML                     | Galaxy head node
+Midgard   | BML                     | Conda/agoge
+Asgard    | BML                     | Conda
+NewGalaxy | BML                     | Compute resources to connect to ATGM Galaxy
+NAS       | BML                     | Connect to ATGM Galaxy, FTP for extern

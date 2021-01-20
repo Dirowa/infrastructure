@@ -16,8 +16,30 @@
     - name: Packages we want installed
       apt:
         name:
+          - at
+          - atop
+          - curl
+          - htop
+          - iftop
+          - iotop
+          - jq
+          - lsof
+          - patch
+          - strace
+          - telnet
+          - tmux
           - vim
+          - wget
         state: latest
+
+    - name: Ensure services are enabled + started
+      systemd:
+        name: "{{ item }}"
+        enabled: yes
+        #state: started
+      with_items:
+        - atop
+        - atd
 
     # Setup User(s)
     - user:

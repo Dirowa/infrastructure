@@ -24,6 +24,5 @@
       become: true
       become_user: "{{ galaxy_user.name }}"
     - usegalaxy_eu.galaxy_systemd
-    - usegalaxy_eu.rabbitmq
     - galaxyproject.nginx
     - galaxyproject.cvmfs

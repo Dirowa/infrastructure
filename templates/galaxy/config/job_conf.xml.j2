@@ -1,0 +1,14 @@
+<job_conf>
+    <plugins workers="4">
+        <plugin id="local_plugin" type="runner" load="galaxy.jobs.runners.local:LocalJobRunner"/>
+    </plugins>
+    <destinations default="local">
+        <destination id="local" runner="local_plugin">
+        </destination>
+    </destinations>
+    <resources>
+        <group id="testing">cores,time</group>
+    </resources>
+    <tools>
+    </tools>
+</job_conf>

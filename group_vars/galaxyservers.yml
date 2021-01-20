@@ -32,7 +32,6 @@ miniconda_manage_dependencies: false
 
 galaxy_config:
   galaxy:
-    job_metrics_config_file: "{{ galaxy_config_dir }}/job_metrics_conf.xml"
     brand: "🧬ATGM🔬"
     admin_users: es.rasche@avans.nl
     database_connection: "postgresql:///galaxy?host=/var/run/postgresql"
@@ -40,7 +39,9 @@ galaxy_config:
     check_migrate_tools: false
     tool_data_path: "{{ galaxy_mutable_data_dir }}/tool-data"
     job_config_file: "{{ galaxy_config_dir }}/job_conf.xml"
+    job_metrics_config_file: "{{ galaxy_config_dir }}/job_metrics_conf.xml"
     id_secret: "{{ id_secret }}"
+    tool_data_table_config_path: /cvmfs/data.galaxyproject.org/byhand/location/tool_data_table_conf.xml,/cvmfs/data.galaxyproject.org/managed/location/tool_data_table_conf.xml
   uwsgi:
     socket: 127.0.0.1:8080
     buffer-size: 16384

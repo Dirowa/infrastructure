@@ -26,3 +26,9 @@ telegraf_plugins_default:
   - plugin: net
   - plugin: netstat
   - plugin: chrony
+
+# Golang
+golang_gopath: '/opt/workspace-go'
+# Singularity target version
+singularity_version: "3.7.0"
+singularity_go_path: "{{ golang_install_dir }}"

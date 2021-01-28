@@ -6,8 +6,6 @@
   vars_files:
     - group_vars/secret.yml
   roles:
-    - usegalaxy-eu.dynmotd
-    - hxr.admin-tools
     - influxdata.chrony
     - dj-wasabi.telegraf
     - dev-sec.os-hardening

@@ -32,6 +32,3 @@ golang_gopath: '/opt/workspace-go'
 # Singularity target version
 singularity_version: "3.7.0"
 singularity_go_path: "{{ golang_install_dir }}"
-
-# OS Sec
-os_env_umask: 022

@@ -109,3 +109,9 @@ jenkins_plugins:
 - git
 - credentials-binding
 - simple-theme-plugin
+
+# OS env
+os_desktop_enable: true
+os_env_umask: "022"
+os_auth_pw_max_age: 99999
+os_auth_retries: 10

@@ -1,5 +1,5 @@
 - src: galaxyproject.galaxy
-  version: 0.9.6
+  version: 0.9.7
 - src: galaxyproject.nginx
   version: 0.6.4
 - src: galaxyproject.postgresql
@@ -28,4 +28,13 @@
   version: 0.2.13
 - src: galaxyproject.pulsar
   version: 1.0.6
-
+- src: geerlingguy.java
+  version: 1.10.0
+- src: geerlingguy.jenkins
+  version: 4.3.0
+- src: dj-wasabi.telegraf
+  version: 0.13.0
+- src: influxdata.chrony
+  version: master
+- src: dev-sec.os-hardening
+  version: 6.2.0

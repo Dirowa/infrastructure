@@ -42,6 +42,8 @@ galaxy_config:
     job_metrics_config_file: "{{ galaxy_config_dir }}/job_metrics_conf.xml"
     id_secret: "{{ id_secret }}"
     tool_data_table_config_path: /cvmfs/data.galaxyproject.org/byhand/location/tool_data_table_conf.xml,/cvmfs/data.galaxyproject.org/managed/location/tool_data_table_conf.xml
+    object_store_store_by: uuid
+    aws_estimate: false
   uwsgi:
     socket: 127.0.0.1:8080
     buffer-size: 16384
@@ -86,3 +88,12 @@ nginx_servers:
 nginx_enable_default_server: false
 nginx_conf_http:
   client_max_body_size: 1g
+
+# Jenkins
+jenkins_http_port: 4000
+jenkins_admin_username: admin
+# Please change at least the password to something more suitable
+jenkins_admin_password: "{{ jenkins_password }}"
+jenkins_url_prefix: /jenkins
+jenkins_plugins:
+- matrix-auth

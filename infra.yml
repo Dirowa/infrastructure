@@ -5,7 +5,12 @@
   become_user: root
   vars_files:
     - group_vars/secret.yml
-  roles: []
+  roles:
+    - usegalaxy-eu.dynmotd
+    - hxr.admin-tools
+    - influxdata.chrony
+    - dj-wasabi.telegraf
+    - dev-sec.os-hardening
   post_tasks:
     # Packages
     - name: Update the apt cache
@@ -46,7 +51,7 @@
         name: hexylena
         comment: Helena Rasche
         shell: /bin/bash
-        groups: sudo
+        groups: sudo, adm, systemd-journal
         append: yes
     - name: Set authorized key taken from file
       ansible.posix.authorized_key:

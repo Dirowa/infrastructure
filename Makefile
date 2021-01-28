@@ -1,3 +1,6 @@
+gx: roles
+	ansible-playbook galaxy.yml
+
 all: roles
 	ansible-playbook infra.yml
 

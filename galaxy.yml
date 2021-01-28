@@ -8,6 +8,27 @@
     - name: Install Dependencies
       package:
         name: ['acl', 'bzip2', 'git', 'make', 'python3-psycopg2', 'tar', 'virtualenv']
+    - name: Create the mount directory
+      file:
+        path: /mount
+        state: directory
+        mode: 0755
+    - name: Mount sda, sdb
+      ansible.posix.mount:
+        path: "/mount/{{ item }}"
+        src: "/dev/{{ item }}"
+        fstype: ext4
+        state: mounted
+      with_items:
+        - sda
+        - sdb
+    - name: Allow jenkins user to execute things as root
+      copy:
+        content: |
+          jenkins ALL=(ALL:ALL) NOPASSWD:ALL
+        dest: /etc/sudoers.d/jenkins
+        validate: 'visudo -cf %s'
+        mode: 0440
   handlers:
     - name: Restart Galaxy
       systemd:
@@ -26,3 +47,8 @@
     - usegalaxy_eu.galaxy_systemd
     - galaxyproject.nginx
     - galaxyproject.cvmfs
+    - geerlingguy.java
+    - geerlingguy.jenkins
+    - influxdata.chrony
+    - dj-wasabi.telegraf
+    - dev-sec.os-hardening

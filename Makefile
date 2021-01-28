@@ -1,5 +1,5 @@
 gx: roles
-	ansible-playbook galaxy.yml
+	ansible-playbook galaxy.yml --extra-vars "__galaxy_dir_perms='0755'"
 
 all: roles
 	ansible-playbook infra.yml

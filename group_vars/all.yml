@@ -2,3 +2,6 @@
 cvmfs_role: client
 galaxy_cvmfs_repos_enabled: config-repo
 cvmfs_quota_limit: 500
+
+# telegraf
+telegraf_agent_version: 1.17.0

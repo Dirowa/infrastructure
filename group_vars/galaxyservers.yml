@@ -43,9 +43,26 @@ galaxy_config:
     id_secret: "{{ id_secret }}"
     tool_data_table_config_path: /cvmfs/data.galaxyproject.org/byhand/location/tool_data_table_conf.xml,/cvmfs/data.galaxyproject.org/managed/location/tool_data_table_conf.xml
     object_store_store_by: uuid
-    aws_estimate: true
     dependency_resolvers_config_file: "{{ galaxy_config_dir }}/dependency_resolvers_conf.xml"
     containers_resolvers_config_file: "{{ galaxy_config_dir }}/container_resolvers_conf.xml"
+    # todo: GAT
+    aws_estimate: true
+    allow_path_paste: true
+    database_engine_option_server_side_cursors: true
+    slow_query_log_threshold: 5
+    enable_per_request_sql_debugging: true
+    watch_tools: true
+    watch_job_rules: true
+    #nginx_x_accel_redirect_base:
+    sanitize_all_html: false
+    serve_xss_vulnerable_mimetypes: true
+    library_import_dir: /data/library
+    show_welcome_with_login: true
+    expose_user_name: true
+    enable_quotas: true
+    expose_dataset_path: true
+    expose_potentially_sensitive_job_metrics: true
+    outputs_to_working_directory: true
   uwsgi:
     socket: 127.0.0.1:8080
     buffer-size: 16384

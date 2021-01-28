@@ -100,3 +100,4 @@ jenkins_plugins:
 - shiningpanda
 - git
 - credentials-binding
+- simple-theme-plugin

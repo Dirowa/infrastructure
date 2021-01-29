@@ -1,12 +1,36 @@
-# grafana
+# Grafana
+grafana_instance: "{{ inventory_hostname}}"
+grafana_address: "127.0.0.1"
 grafana_url: "http://{{ inventory_hostname }}/grafana/"
+grafana_server:
+    domain: "{{ inventory_hostname }}"
+    root_url: "https://%(domain)s/"
+grafana_users:
+    default_theme: "light"
 
 grafana_security:
-    # Please change at least the password to something more suitable
     admin_user: admin
     admin_password: "{{ grafana_admin_pass }}"
+    allow_embedding: "true"
+
+grafana_auth:
+    anonymous:
+        enabled: "true"
+        org_name: "Main org."
+        org_role: "Viewer"
 
 # These datasources will be automatically included into Grafana
+grafana_image_storage:
+  provider: local
+
+grafana_environment:
+  GF_PANELS_DISABLE_SANITIZE_HTML: 'true'
+
+grafana_plugins:
+  - grafana-worldmap-panel
+  - grafana-piechart-panel
+  - natel-discrete-panel
+
 grafana_datasources:
  - name: Galaxy
    type: influxdb

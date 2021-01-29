@@ -131,6 +131,7 @@ jenkins_plugins:
 - git
 - credentials-binding
 - simple-theme-plugin
+- embeddable-build-status
 
 # OS env
 os_desktop_enable: true

@@ -6,7 +6,7 @@ for repo__version in $(ansible-galaxy list | awk '{gsub(", ", "\t"); print $2"__
 
 	# Ignore these, not proper ones.
 	if [[ "$vers" != "(unkonwn" ]]; then
-		results="$(grep "$repo" -A2 requirements.yaml)"
+		results="$(grep "$repo" -A2 requirements.yml)"
 		ec=$?
 
 		# Not under git's control

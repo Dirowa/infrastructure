@@ -45,6 +45,7 @@
       become_user: "{{ galaxy_user.name }}"
     - usegalaxy_eu.galaxy_systemd
     - usegalaxy_eu.gxadmin
+    - hxr.monitor-cluster
     - galaxyproject.nginx
     - galaxyproject.cvmfs
     - influxdata.chrony

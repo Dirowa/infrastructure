@@ -5,6 +5,9 @@
   vars_files:
     - group_vars/secret.yml
   pre_tasks:
+    - name: Fix Hostname
+      hostname:
+        name: "{{ inventory_hostname }}"
     - name: Install Dependencies
       package:
         name: ['acl', 'bzip2', 'git', 'make', 'python3-psycopg2', 'tar', 'virtualenv']
@@ -28,6 +31,7 @@
         name: galaxy
         state: restarted
   roles:
+    - ansible-htcondor
     - galaxyproject.postgresql
     - role: natefoo.postgresql_objects
       become: true
@@ -44,4 +48,4 @@
     - galaxyproject.cvmfs
     - influxdata.chrony
     - dj-wasabi.telegraf
-    #- dev-sec.os-hardening
+    - dev-sec.os-hardening

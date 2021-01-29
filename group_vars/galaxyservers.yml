@@ -137,3 +137,18 @@ os_desktop_enable: true
 os_env_umask: "022"
 os_auth_pw_max_age: 99999
 os_auth_retries: 10
+
+# HTCondor
+condor_host: "galaxy.bioinformatics-atgm.nl"
+condor_allow_write: "*.bioinformatics-atgm.nl"
+condor_daemons:
+    - COLLECTOR
+    - MASTER
+    - NEGOTIATOR
+    - SCHEDD
+condor_allow_negotiator: '$(ALLOW_WRITE)'
+condor_allow_administrator: "$(ALLOW_WRITE)"
+condor_network_interface: "{{ ansible_default_ipv4.interface }}"
+condor_fs_domain: bioinformatics-atgm.nl
+condor_uid_domain: bioinformatics-atgm.nl
+condor_trust_uid_domain: 'True'

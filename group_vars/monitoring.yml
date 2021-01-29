@@ -1,6 +1,4 @@
 # Grafana
-grafana_instance: "{{ inventory_hostname}}"
-grafana_address: "127.0.0.1"
 grafana_url: "http://{{ inventory_hostname }}/grafana/"
 grafana_users:
     default_theme: "light"

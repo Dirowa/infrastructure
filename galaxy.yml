@@ -10,7 +10,7 @@
         name: "{{ inventory_hostname }}"
     - name: Install Dependencies
       package:
-        name: ['acl', 'bzip2', 'git', 'make', 'python3-psycopg2', 'tar', 'virtualenv']
+        name: ['acl', 'bzip2', 'git', 'make', 'python3-psycopg2', 'tar', 'virtualenv', 'cgroup-tools']
     - name: Create the mount directory
       file:
         path: /mount
@@ -49,3 +49,4 @@
     - influxdata.chrony
     - dj-wasabi.telegraf
     #- dev-sec.os-hardening
+    #

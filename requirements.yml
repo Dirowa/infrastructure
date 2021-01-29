@@ -44,3 +44,9 @@
   version: 2.6.3
 - src: https://github.com/Avans-ATGM/ansible-htcondor
   version: 4fca8d776e49edc88537d5a949cfa0f5a519caaf
+- src: usegalaxy_eu.influxdb
+  version: v6.0.3
+- src: cloudalchemy.grafana
+  version: 0.14.2
+- src: usegalaxy_eu.gxadmin
+  version: 0.0.3

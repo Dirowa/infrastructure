@@ -1,0 +1,18 @@
+# grafana
+grafana_url: "http://{{ inventory_hostname }}/grafana/"
+
+grafana_security:
+    # Please change at least the password to something more suitable
+    admin_user: admin
+    admin_password: "{{ grafana_admin_pass }}"
+
+# These datasources will be automatically included into Grafana
+grafana_datasources:
+ - name: Galaxy
+   type: influxdb
+   access: proxy
+   url: http://127.0.0.1:8086
+   isDefault: true
+   version: 1
+   editable: false
+   database: telegraf

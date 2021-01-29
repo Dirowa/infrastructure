@@ -50,3 +50,5 @@
   version: 0.14.2
 - src: usegalaxy_eu.gxadmin
   version: 0.0.3
+- src: geerlingguy.docker
+  version: 3.0.0

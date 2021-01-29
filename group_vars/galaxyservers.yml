@@ -256,6 +256,13 @@ telegraf_plugins_extra:
       - timeout = "15s"
       - data_format = "influx"
       - interval = "1m"
+  cocalc:
+    plugin: "exec"
+    config:
+      - commands = ["/usr/bin/curl -k https://bioinformatics-atgm.nl/stats"]
+      - timeout = "15s"
+      - data_format = "json"
+      - interval = "1m"
 
   postgres_extra:
     plugin: "exec"

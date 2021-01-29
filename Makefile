@@ -5,4 +5,5 @@ all: roles
 	ansible-playbook infra.yml
 
 roles: requirements.yml
+	bash bin/clean-deps.sh
 	ansible-galaxy install -p roles -r requirements.yml

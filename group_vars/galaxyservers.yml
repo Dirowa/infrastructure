@@ -186,7 +186,7 @@ telegraf_plugins_extra:
   postgres:
     plugin: "postgresql"
     config:
-      - address = "{{ galaxy_db_connection }}"
+      - address = "{{ galaxy_config.galaxy.database_connection }}"
       - databases = ["galaxy", "galaxy-test", "apollo", "chado"]
 
   monitor_condor_queue:

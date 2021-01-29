@@ -6,3 +6,6 @@ godzilla@7kingdoms.bioinformatics-atgm.nl
 
 [galaxyservers]
 galaxy.bioinformatics-atgm.nl ansible_user=bioinf_team
+
+[monitoring]
+galaxy.bioinformatics-atgm.nl ansible_user=bioinf_team

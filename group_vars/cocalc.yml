@@ -1,0 +1,7 @@
+telegraf_agent_hostname: cocalc
+telegraf_agent_output:
+  - type: file
+    config:
+    - files = ["stdout", "/tmp/metrics.out"]
+    - data_format = "json"
+    - json_timestamp_units = "1s"

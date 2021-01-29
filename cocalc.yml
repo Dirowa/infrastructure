@@ -1,0 +1,39 @@
+---
+- hosts: cocalc
+  become: true
+  become_user: root
+  vars:
+    pip_package: python3-pip
+    pip_install_packages:
+      - name: docker-py
+  vars_files:
+    - group_vars/secret.yml
+  pre_tasks:
+    - name: Install Dependencies
+      package:
+        name: ['git', 'cgroup-tools']
+  roles:
+    - geerlingguy.pip
+    - geerlingguy.docker
+    - influxdata.chrony
+    - dj-wasabi.telegraf
+  post_tasks:
+    - name: Update repos
+      apt:
+        update_cache: yes
+        cache_valid_time: 900
+
+    - name: Upgrade packages
+      apt:
+        upgrade: yes
+        autoremove: yes
+
+    - name: Cocalc
+      docker_container:
+        name: cocalc
+        image: sagemathinc/cocalc
+        state: started
+        volumes:
+        - /home/ubuntu/cocalc:/projects
+        ports:
+        - 443:443

@@ -48,4 +48,4 @@
     - galaxyproject.cvmfs
     - influxdata.chrony
     - dj-wasabi.telegraf
-    - dev-sec.os-hardening
+    #- dev-sec.os-hardening

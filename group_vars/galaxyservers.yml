@@ -167,6 +167,7 @@ condor_extra: |
     CGROUP_MEMORY_LIMIT_POLICY = soft
 
 # Monitoring
+custom_telegraf_env: "/usr/bin/env GDPR_MODE=1 PGUSER=galaxy GALAXY_ROOT=/srv/galaxy/server GALAXY_CONFIG_FILE=/srv/galaxy/config/galaxy.yml GXADMIN_PYTHON=/srv/galaxy/venv/bin/python"
 telegraf_plugins_extra:
   listen_galaxy_routes:
     plugin: "statsd"

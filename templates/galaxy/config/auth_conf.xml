@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<auth>
+	<authenticator>
+		<type>ldap</type>
+		<options>
+			<auto-create-groups>department</auto-create-groups>
+			<server>{{ ldap.server }}</server>
+			<login-use-username>False</login-use-username>
+			<search-filter>(&amp;(objectClass=user)(mail={email}))</search-filter>
+			<search-user>{{ ldap.user }}</search-user>
+			<search-password>{{ ldap.pass }}</search-password>
+			<search-fields>uid,mail</search-fields>
+			<search-base>OU=People,DC=avans,DC=nl</search-base>
+			<allow-password-change>False</allow-password-change>
+		</options>
+	</authenticator>
+	<authenticator>
+		<type>localdb</type>
+		<options>
+			<allow-password-change>False</allow-password-change>
+		</options>
+	</authenticator>
+</auth>

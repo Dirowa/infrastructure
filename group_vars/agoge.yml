@@ -1,0 +1,5 @@
+miniconda_channels:
+    - iuc
+    - conda-forge
+    - bioconda
+    - defaults

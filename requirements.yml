@@ -44,6 +44,7 @@
   version: 2.6.3
 - src: https://github.com/Avans-ATGM/ansible-htcondor
   version: 4fca8d776e49edc88537d5a949cfa0f5a519caaf
+  name: htcondor-github
 - src: usegalaxy_eu.influxdb
   version: v6.0.3
 - src: cloudalchemy.grafana
@@ -52,3 +53,5 @@
   version: 0.0.3
 - src: geerlingguy.docker
   version: 3.0.0
+- src: galaxyproject.miniconda
+  version: 0.1.0

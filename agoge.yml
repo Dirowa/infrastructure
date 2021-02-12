@@ -14,3 +14,9 @@
         password: "{{ 'password' | password_hash('sha512') }}"
         shell: /bin/bash
       loop: "{{ cli_users }}"
+    - name: Loop over role
+      include_role:
+       name: galaxyproject.miniconda
+      vars:
+        miniconda_prefix: "/mnt/StudentFiles/2020-21/Project{{ item }}/conda"
+      loop: "{{ cli_users }}"

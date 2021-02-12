@@ -1,0 +1,16 @@
+---
+- hosts: agoge
+  become: true
+  become_user: root
+  vars_files:
+    - group_vars/secret.yml
+  roles:
+    - influxdata.chrony
+  post_tasks:
+    - user:
+        name: "Project{{ item }}"
+        comment: "Group {{ item }}"
+        home: "/mnt/StudentFiles/2020-21/Project{{ item }}"
+        password: "{{ 'password' | password_hash('sha512') }}"
+        shell: /bin/bash
+      loop: "{{ cli_users }}"

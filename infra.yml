@@ -7,8 +7,8 @@
     - group_vars/secret.yml
   roles:
     - influxdata.chrony
-    - dj-wasabi.telegraf
-    - dev-sec.os-hardening
+    #- dj-wasabi.telegraf
+    #- dev-sec.os-hardening
   post_tasks:
     # Packages
     - name: Update the apt cache

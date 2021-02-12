@@ -3,6 +3,7 @@ gx: roles
 
 
 agoge: roles
+	$(MAKE) roles
 	ansible-playbook agoge.yml --diff
 
 monitor: roles

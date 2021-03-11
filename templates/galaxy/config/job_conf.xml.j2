@@ -3,8 +3,9 @@
 		<plugin id="local_plugin" type="runner" load="galaxy.jobs.runners.local:LocalJobRunner"/>
 		<plugin id="condor" type="runner" load="galaxy.jobs.runners.condor:CondorJobRunner"/>
 	</plugins>
-	<destinations default="singularity">
+	<destinations default="local_condor">
 		<destination id="local_destination" runner="local_plugin"/>
+		<destination id="local_condor" runner="condor" />
 		<destination id="singularity" runner="condor">
 			<param id="singularity_enabled">true</param>
 			<!-- Ensuring a consistent collation environment is good for reproducibility. -->

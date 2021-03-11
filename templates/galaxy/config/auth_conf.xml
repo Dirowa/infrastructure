@@ -9,8 +9,8 @@
 			<search-filter>(&amp;(objectClass=user)(mail={email}))</search-filter>
 			<search-user>{{ ldap.user }}</search-user>
 			<search-password>{{ ldap.pass }}</search-password>
-			<bind-user>{{ ldap.user }}</bind-user>
-			<bind-password>{{ ldap.pass }}@</bind-password>
+			<bind-user>{email}</bind-user>
+			<bind-password>{password}</bind-password>
 			<search-fields>uid,mail,displayName</search-fields>
 			<search-base>OU=People,DC=avans,DC=nl</search-base>
 			<allow-password-change>False</allow-password-change>

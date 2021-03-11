@@ -67,7 +67,7 @@ galaxy_config:
     serve_xss_vulnerable_mimetypes: true
     library_import_dir: /data/library
     show_welcome_with_login: true
-    expose_user_name: true
+    #expose_user_name: true
     enable_quotas: true
     expose_dataset_path: true
     expose_potentially_sensitive_job_metrics: true

@@ -15,9 +15,9 @@
         shell: /bin/bash
       loop: "{{ cli_users }}"
     - name: Loop over role
+      become: true
+      become_user: "Project{{ item }}"
       include_role:
-        become: true
-        become_user: "Project{{ item }}"
         name: galaxyproject.miniconda
       vars:
         miniconda_prefix: "/mnt/StudentFiles/2020-21/Project{{ item }}/conda"

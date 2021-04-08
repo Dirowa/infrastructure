@@ -31,6 +31,8 @@
         name: galaxy
         state: restarted
   roles:
+    - avans
+    - jnv.unattended-upgrades
     - ansible-htcondor
     - galaxyproject.postgresql
     - role: natefoo.postgresql_objects
@@ -50,5 +52,3 @@
     - galaxyproject.cvmfs
     - influxdata.chrony
     - dj-wasabi.telegraf
-    #- dev-sec.os-hardening
-    #

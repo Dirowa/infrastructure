@@ -30,3 +30,10 @@ golang_gopath: '/opt/workspace-go'
 # Singularity target version
 singularity_version: "3.7.0"
 singularity_go_path: "{{ golang_install_dir }}"
+
+# Auto upgrades
+unattended_origins_patterns:
+  - 'origin=Ubuntu,archive=${distro_codename}-security'
+  - 'o=Ubuntu,a=${distro_codename}'
+  - 'o=Ubuntu,a=${distro_codename}-updates'
+  - 'o=Ubuntu,a=${distro_codename}-proposed-updates'

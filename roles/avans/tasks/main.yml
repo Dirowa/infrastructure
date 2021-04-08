@@ -1,0 +1,24 @@
+- name: Install basic packages we want everywhere
+  package:
+    name:
+      - acl
+      - bc
+      - build-essential
+      - byobu
+      - emacs-nox
+      - git
+      - jq
+      - make
+      - moreutils
+      - nano
+      - screen
+      - sudo
+      - tree
+      - vim-nox
+      - virtualenv
+      - zlib1g-dev
+
+- name: Select sane default for students
+  community.general.alternatives:
+    name: editor
+    path: /bin/nano

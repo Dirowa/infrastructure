@@ -1,15 +1,18 @@
-gx: roles
+gx:
+	$(MAKE) roles
 	ansible-playbook galaxy.yml --diff --extra-vars "__galaxy_dir_perms='0755' os_env_umask='022'"
 
 
-agoge: roles
+agoge:
 	$(MAKE) roles
 	ansible-playbook agoge.yml --diff
 
-monitor: roles
+monitor:
+	$(MAKE) roles
 	ansible-playbook monitoring.yml --diff
 
-all: roles
+all:
+	$(MAKE) roles
 	ansible-playbook infra.yml --diff
 
 roles: requirements.yml

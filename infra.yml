@@ -6,44 +6,12 @@
   vars_files:
     - group_vars/secret.yml
   roles:
+    - avans
+    - jnv.unattended-upgrades
     - influxdata.chrony
     #- dj-wasabi.telegraf
     #- dev-sec.os-hardening
   post_tasks:
-    # Packages
-    - name: Update the apt cache
-      apt:
-        update_cache: yes
-        cache_valid_time: 3600
-
-    - name: Packages we want installed
-      apt:
-        name:
-          - at
-          - atop
-          - curl
-          - htop
-          - iftop
-          - iotop
-          - jq
-          - lsof
-          - patch
-          - strace
-          - telnet
-          - tmux
-          - vim
-          - wget
-        state: latest
-
-    - name: Ensure services are enabled + started
-      systemd:
-        name: "{{ item }}"
-        enabled: yes
-        #state: started
-      with_items:
-        - atop
-        - atd
-
     # Setup User(s)
     - user:
         name: hexylena

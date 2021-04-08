@@ -1,24 +1,50 @@
+- name: Update the apt cache
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+
 - name: Install basic packages we want everywhere
   package:
     name:
       - acl
+      - at
+      - atop
       - bc
       - build-essential
       - byobu
+      - curl
       - emacs-nox
       - git
+      - htop
+      - iftop
+      - iotop
       - jq
+      - lsof
       - make
       - moreutils
       - nano
+      - patch
       - screen
+      - strace
       - sudo
+      - telnet
+      - tmux
       - tree
       - vim-nox
       - virtualenv
+      - wget
       - zlib1g-dev
 
 - name: Select sane default for students
   community.general.alternatives:
     name: editor
     path: /bin/nano
+
+- name: Ensure services are enabled + started
+  systemd:
+    name: "{{ item }}"
+    enabled: yes
+    #state: started
+  with_items:
+    - atop
+    - atd

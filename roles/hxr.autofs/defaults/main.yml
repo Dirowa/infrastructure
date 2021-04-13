@@ -1,2 +1,3 @@
 data_conf:
   - /srv/galaxy   -rw,hard,intr,nosuid,quota      galaxy.bioinformatics-atgm.nl:/srv/galaxy
+  - /data         -rw,hard,intr,nosuid,quota      galaxy.bioinformatics-atgm.nl:/data

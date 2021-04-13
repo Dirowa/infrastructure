@@ -9,13 +9,13 @@
       hostname:
         name: "{{ inventory_hostname }}"
   roles:
-    - avans
+    #- avans
     - hxr.autofs
-    - jnv.unattended-upgrades
+    #- jnv.unattended-upgrades
     - ansible-htcondor
-    - galaxyproject.cvmfs
-    - influxdata.chrony
-    - dj-wasabi.telegraf
+    #- galaxyproject.cvmfs
+    #- influxdata.chrony
+    #- dj-wasabi.telegraf
   #post_tasks:
     #- user:
         #name: "Project{{ item }}"

@@ -15,6 +15,8 @@ telegraf_plugins_default:
     config:
       - percpu = true
   - plugin: disk
+    config:
+      - ignore_fs = ["tmpfs", "devtmpfs", "devfs", "iso9660", "overlay", "aufs", "squashfs"]
   - plugin: kernel
   - plugin: processes
   - plugin: io
@@ -51,7 +53,7 @@ condor_extra: |
     CLAIM_PARTITIONABLE_LEFTOVERS = True
     NUM_SLOTS = 1
     NUM_SLOTS_TYPE_1 = 1
-    SLOT_TYPE_1 = cpus=24,ram=100
+    SLOT_TYPE_1 = cpus=95%,ram=95%
     SLOT_TYPE_1_PARTITIONABLE = True
     ALLOW_PSLOT_PREEMPTION = False
     STARTD.PROPORTIONAL_SWAP_ASSIGNMENT = True

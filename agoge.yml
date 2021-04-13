@@ -7,8 +7,10 @@
   roles:
     - avans
     - jnv.unattended-upgrades
+    - ansible-htcondor
     - galaxyproject.cvmfs
     - influxdata.chrony
+    - dj-wasabi.telegraf
   #post_tasks:
     #- user:
         #name: "Project{{ item }}"

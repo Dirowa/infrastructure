@@ -3,12 +3,24 @@
 		<plugin id="local_plugin" type="runner" load="galaxy.jobs.runners.local:LocalJobRunner"/>
 		<plugin id="condor" type="runner" load="galaxy.jobs.runners.condor:CondorJobRunner"/>
 	</plugins>
-	<destinations default="condor_8-2">
+	<destinations default="condor_8">
 		<destination id="local_destination" runner="local_plugin"/>
 		<destination id="local_condor" runner="condor" />
-		<destination id="condor_8-2" runner="condor">
+		<destination id="condor_8" runner="condor">
 			<param id="request_cpus">2</param>
 			<param id="request_memory">8GB</param>
+		</destination>
+		<destination id="condor_16" runner="condor">
+			<param id="request_cpus">2</param>
+			<param id="request_memory">16GB</param>
+		</destination>
+		<destination id="condor_32" runner="condor">
+			<param id="request_cpus">2</param>
+			<param id="request_memory">32GB</param>
+		</destination>
+		<destination id="condor_64" runner="condor">
+			<param id="request_cpus">8</param>
+			<param id="request_memory">64GB</param>
 		</destination>
 		<destination id="singularity" runner="condor">
 			<param id="singularity_enabled">true</param>
@@ -24,6 +36,8 @@
 		<group id="testing">cores,time</group>
 	</resources>
 	<tools>
+		<tool id="fastqc" destination="condor_16"/>
+		<tool id="flye" destination="condor_32"/>
 	</tools>
 	<limits>
 		<limit type="registered_user_concurrent_jobs">4</limit>

@@ -316,4 +316,4 @@ tiaas_admin_pass: "{{ secret_tiaas_admin_pw }}"
 
 # NFS
 nfs_exports:
-- "/srv/galaxy *.bioinformatics-atgm.nl(rw,sync,no_root_squash,no_subtree_check)"
+- "/srv/galaxy 145.48.205.36(rw,sync,no_root_squash,no_subtree_check) 145.48.205.37(rw,sync,no_root_squash,no_subtree_check) 145.48.205.25(rw,sync,no_root_squash,no_subtree_check)"

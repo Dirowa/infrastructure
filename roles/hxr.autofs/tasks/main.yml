@@ -4,6 +4,14 @@
     name: autofs
     state: latest
 
+- name: Create dir
+  file:
+    path: "/etc/auto.master.d"
+    state: directory
+    mode: 0755
+    owner: root
+    group: root
+
 - name: Copy main autofs file
   template:
     src: data.autofs.j2

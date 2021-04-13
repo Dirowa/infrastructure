@@ -18,6 +18,10 @@
 			<param id="request_cpus">2</param>
 			<param id="request_memory">32GB</param>
 		</destination>
+		<destination id="condor_32-20" runner="condor">
+			<param id="request_cpus">20</param>
+			<param id="request_memory">32GB</param>
+		</destination>
 		<destination id="condor_64" runner="condor">
 			<param id="request_cpus">8</param>
 			<param id="request_memory">64GB</param>
@@ -37,7 +41,7 @@
 	</resources>
 	<tools>
 		<tool id="fastqc" destination="condor_16"/>
-		<tool id="flye" destination="condor_32"/>
+		<tool id="flye" destination="condor_32-20"/>
 	</tools>
 	<limits>
 		<limit type="registered_user_concurrent_jobs">4</limit>

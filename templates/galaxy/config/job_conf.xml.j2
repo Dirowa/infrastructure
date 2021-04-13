@@ -11,11 +11,21 @@
 			<param id="request_memory">8GB</param>
 		</destination>
 		<destination id="condor_16" runner="condor">
-			<param id="request_cpus">2</param>
+			<param id="request_cpus">4</param>
 			<param id="request_memory">16GB</param>
 		</destination>
-		<destination id="condor_32" runner="condor">
+		<destination id="condor_16-fastqc" runner="condor">
 			<param id="request_cpus">2</param>
+			<param id="request_memory">16GB</param>
+			<env id="_JAVA_OPTIONS">-XX:MaxPermSize=2G -Xmx14G -Xms1G</env>
+		</destination>
+		<destination id="condor-shovill" runner="condor">
+			<param id="request_cpus">4</param>
+			<param id="request_memory">40GB</param>
+			<env id="SHOVILL_RAM">40</env>
+		</destination>
+		<destination id="condor_32" runner="condor">
+			<param id="request_cpus">8</param>
 			<param id="request_memory">32GB</param>
 		</destination>
 		<destination id="condor_32-20" runner="condor">
@@ -40,8 +50,10 @@
 		<group id="testing">cores,time</group>
 	</resources>
 	<tools>
-		<tool id="fastqc" destination="condor_16"/>
+		<tool id="fastqc" destination="condor_16-fastqc"/>
+		<tool id="shovill" destination="condor-shovill"/>
 		<tool id="flye" destination="condor_32-20"/>
+		<tool id="bowtie2" destination="condor_16"/>
 	</tools>
 	<limits>
 		<limit type="registered_user_concurrent_jobs">4</limit>

@@ -34,6 +34,7 @@
     - avans
     - jnv.unattended-upgrades
     - ansible-htcondor
+    - geerlingguy.nfs
     - galaxyproject.postgresql
     - role: natefoo.postgresql_objects
       become: true
@@ -52,3 +53,4 @@
     - galaxyproject.cvmfs
     - influxdata.chrony
     - dj-wasabi.telegraf
+    - usegalaxy_eu.tiaas2

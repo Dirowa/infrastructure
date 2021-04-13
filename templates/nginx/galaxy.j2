@@ -73,4 +73,21 @@ server {
 	location /training-material/ {
 		proxy_pass https://training.galaxyproject.org/training-material/;
 	}
+
+	# TIaaS
+	location /tiaas {
+		uwsgi_pass 127.0.0.1:5000;
+		uwsgi_param UWSGI_SCHEME $scheme;
+		include uwsgi_params;
+	}
+
+	location /tiaas/static {
+		alias {{ tiaas_dir }}/static;
+	}
+
+	location /join-training {
+		uwsgi_pass 127.0.0.1:5000;
+		uwsgi_param UWSGI_SCHEME $scheme;
+		include uwsgi_params;
+	}
 }

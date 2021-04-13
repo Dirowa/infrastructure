@@ -10,6 +10,7 @@
         name: "{{ inventory_hostname }}"
   roles:
     - avans
+    - hxr.autofs
     - jnv.unattended-upgrades
     - ansible-htcondor
     - galaxyproject.cvmfs

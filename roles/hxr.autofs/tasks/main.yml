@@ -1,0 +1,32 @@
+---
+- name: autofs package install
+  package:
+    name: autofs
+    state: latest
+
+- name: Copy main autofs file
+  template:
+    src: data.autofs.j2
+    dest: "/etc/auto.master.d/data.autofs"
+    owner: root
+    group: root
+    mode: 0644
+  notify: autofs restart
+
+- name: Copy data conf file
+  template:
+    src: "data.conf.j2"
+    dest: "/etc/auto.data"
+    owner: root
+    group: root
+    mode: 0644
+  notify: autofs restart
+
+- name: autofs service enable
+  service:
+    name: autofs
+    enabled: yes
+    state: started
+
+- name: Flush handlers to ensure mounts are available
+  meta: flush_handlers

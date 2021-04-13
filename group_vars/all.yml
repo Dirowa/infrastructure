@@ -37,3 +37,23 @@ unattended_origins_patterns:
   - 'o=Ubuntu,a=${distro_codename}'
   - 'o=Ubuntu,a=${distro_codename}-updates'
   - 'o=Ubuntu,a=${distro_codename}-proposed-updates'
+
+# HTCondor
+condor_host: "galaxy.bioinformatics-atgm.nl"
+condor_allow_write: "galaxy.bioinformatics-atgm.nl,asgard.bioinformatics-atgm.nl,midgard.bioinformatics-atgm.nl,7kingdoms.bioinformatics-atgm.nl"
+condor_allow_negotiator: '$(ALLOW_WRITE)'
+condor_allow_administrator: "$(ALLOW_WRITE)"
+condor_network_interface: "{{ ansible_default_ipv4.interface }}"
+condor_fs_domain: bioinformatics-atgm.nl
+condor_uid_domain: bioinformatics-atgm.nl
+condor_trust_uid_domain: 'True'
+condor_extra: |
+    CLAIM_PARTITIONABLE_LEFTOVERS = True
+    NUM_SLOTS = 1
+    NUM_SLOTS_TYPE_1 = 1
+    SLOT_TYPE_1 = cpus=24,ram=100
+    SLOT_TYPE_1_PARTITIONABLE = True
+    ALLOW_PSLOT_PREEMPTION = False
+    STARTD.PROPORTIONAL_SWAP_ASSIGNMENT = True
+    COLLECTOR_NAME = "ATGM Cluster"
+    CGROUP_MEMORY_LIMIT_POLICY = soft

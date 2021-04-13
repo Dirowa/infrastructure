@@ -169,23 +169,10 @@ os_auth_pw_max_age: 99999
 os_auth_retries: 10
 
 # HTCondor
-condor_host: "galaxy.bioinformatics-atgm.nl"
-condor_allow_write: "galaxy.bioinformatics-atgm.nl,asgard.bioinformatics-atgm.nl,midgard.bioinformatics-atgm.nl"
 condor_roles:
     - execute
     - central-manager
     - submit
-condor_allow_negotiator: '$(ALLOW_WRITE)'
-condor_allow_administrator: "$(ALLOW_WRITE)"
-condor_network_interface: "{{ ansible_default_ipv4.interface }}"
-condor_fs_domain: bioinformatics-atgm.nl
-condor_uid_domain: bioinformatics-atgm.nl
-condor_trust_uid_domain: 'True'
-condor_extra: |
-    SLOT_TYPE_1 = cpus=1, ram=4
-    NUM_SLOTS_TYPE_1 = 24
-    COLLECTOR_NAME = "ATGM Cluster"
-    CGROUP_MEMORY_LIMIT_POLICY = soft
 
 # Monitoring
 custom_telegraf_env: "/usr/bin/env GDPR_MODE=1 PGUSER=galaxy GALAXY_ROOT=/srv/galaxy/server GALAXY_CONFIG_FILE=/srv/galaxy/config/galaxy.yml GXADMIN_PYTHON=/srv/galaxy/venv/bin/python"

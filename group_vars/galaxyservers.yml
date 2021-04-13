@@ -154,7 +154,7 @@ os_auth_retries: 10
 
 # HTCondor
 condor_host: "galaxy.bioinformatics-atgm.nl"
-condor_allow_write: "*.bioinformatics-atgm.nl"
+condor_allow_write: "galaxy.bioinformatics-atgm.nl,asgard.bioinformatics-atgm.nl,midgard.bioinformatics-atgm.nl"
 condor_roles:
     - execute
     - central-manager

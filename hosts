@@ -11,7 +11,7 @@ galaxy.bioinformatics-atgm.nl ansible_user=bioinf_team
 galaxy.bioinformatics-atgm.nl ansible_user=bioinf_team
 
 [cocalc]
-145.100.58.133 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/keys/id_rsa_surfsara ansible_python_interpreter=/usr/bin/python3
+cocalc.bioinformatics-atgm.nl ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/keys/id_rsa_surfsara ansible_python_interpreter=/usr/bin/python3
 
 [agoge]
 asgard.bioinformatics-atgm.nl ansible_user=thor

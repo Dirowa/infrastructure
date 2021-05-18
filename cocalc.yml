@@ -13,6 +13,7 @@
       package:
         name: ['git', 'cgroup-tools']
   roles:
+    - galaxyproject.nginx
     - geerlingguy.pip
     - geerlingguy.docker
     - influxdata.chrony
@@ -36,4 +37,4 @@
         volumes:
         - /home/ubuntu/cocalc:/projects
         ports:
-        - 443:443
+        - 8443:443

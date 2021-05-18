@@ -91,7 +91,7 @@ galaxy_config:
     expose_dataset_path: true
     expose_potentially_sensitive_job_metrics: true
     outputs_to_working_directory: true
-    cleanup_job: onerror
+    cleanup_job: always
     allow_user_deletion: true
     allow_user_impersonation: true
   uwsgi:
